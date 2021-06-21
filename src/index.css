@@ -26,3 +26,9 @@ nav{
   gap: 20px;
 
 }
+
+.btn-search{
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+}

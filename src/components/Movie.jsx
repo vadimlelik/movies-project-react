@@ -1,4 +1,4 @@
-const Movie = (props) =>{
+const  Movie=(props)=>{
     const {Title:title,Year:year,imdbID:id,Type:type,Poster:poster}=props
 
     return(
