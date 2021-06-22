@@ -13,9 +13,15 @@ class Main extends Component {
   };
 
   componentDidMount() {
+    console.log(process.env);
     fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=sonic`)
       .then((response) => response.json())
-      .then((data) => this.setState({ movies: data.Search, loading: false }));
+      .then((data) => this.setState({ movies: data.Search, loading: false }))
+      .catch((err)=>{
+        console.error();
+        this.setState({loading:false})
+      })
+
   }
 
   searchMovies = (str, type = 'all') => {
@@ -26,7 +32,11 @@ class Main extends Component {
       }`
     )
       .then((response) => response.json())
-      .then((data) => this.setState({ movies: data.Search, loading: false }));
+      .then((data) => this.setState({ movies: data.Search, loading: false }))
+      .catch((err)=>{
+        console.error();
+        this.setState({loading:false})
+      })
   };
 
   render() {
